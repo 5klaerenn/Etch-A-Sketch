@@ -1,5 +1,10 @@
 const gridCont = document.querySelector('#gridContainer');
 
+const gridReset = document.querySelector('#resetBtn');
+gridReset.addEventListener('click', () => {window.location.reload();});
+
+
+
 function createGrid(num){
     for (let i = 0; i < num*num ; i++){
         let gridSquare = document.createElement('div'); 
