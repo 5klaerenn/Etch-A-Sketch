@@ -2,14 +2,22 @@ body {
     background-color: aquamarine;
 }
 
+#mainContainer{
+    display: flex;
+}
+
+#navContainer{
+    display: flex;
+    flex-direction: column;
+}
+
 #gridContainer{
     height: 500px;
     width: 500px;
     border-right: solid black 1px;
+    border-bottom: solid black 1px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(15, 1fr);
 }
 
 .gridSquare {
@@ -22,4 +30,3 @@ body {
     width: 100%;
     background-color: black;
 }
-
