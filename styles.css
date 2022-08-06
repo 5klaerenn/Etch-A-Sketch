@@ -19,6 +19,11 @@ body {
     padding: 0;
 }
 
+.gridRow:hover {
+    background-color: violet;
+}
+
+
 .gridColumn {
     height: 100%;
     width: 100%;
@@ -37,4 +42,5 @@ body {
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid black;
+    margin-bottom: -1px;
 }
