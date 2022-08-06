@@ -5,42 +5,21 @@ body {
 #gridContainer{
     height: 500px;
     width: 500px;
+    border-right: solid black 1px;
     margin: auto;
-    display: flex;
-    border-top: solid black 1px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+}
+
+.gridSquare {
     border-left: solid black 1px;
+    border-top: solid black 1px;
 }
 
-.gridRow,
-.gridColumn {
-    height: 15px;
-    width: 15px;
-    margin: 0;
-    padding: 0;
-}
-
-.gridRow:hover {
-    background-color: violet;
-}
-
-
-.gridColumn {
+.hoveredIn {
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-right: 1px solid black;
+    background-color: black;
 }
 
-.gridRow {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex: row;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid black;
-    margin-bottom: -1px;
-}

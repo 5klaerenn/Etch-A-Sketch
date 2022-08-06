@@ -1,19 +1,19 @@
 const gridCont = document.querySelector('#gridContainer');
 
+function createGrid(num){
+    for (let i = 0; i < num*num ; i++){
+        let gridSquare = document.createElement('div'); 
+        gridSquare.classList.add('gridSquare');
+        gridCont.appendChild(gridSquare);
+        gridSquare.addEventListener('mouseenter', () => gridSquare.classList.add('hoveredIn'));
+        gridSquare.addEventListener('mouseenter', () => console.log(i+1));
+    }     
+    
+    
+}
 
 
-function createDiv() {
-    for(let i = 0; i < 16; i++) {  
-        const gridCol = document.createElement('div');
-        gridCol.classList.add('gridColumn');
-        gridCont.appendChild(gridCol);
 
-        for(let y = 0; y < 15; y++) {
-            const gridRow = document.createElement('div');
-            gridRow.classList.add('gridRow');
-            gridCol.appendChild(gridRow);
-        }
-    }
-} 
+createGrid(16)
 
-createDiv()
+
