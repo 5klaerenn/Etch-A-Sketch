@@ -26,21 +26,15 @@ function resetGrid(){
 }
 
 function changeSize(){
-    num = prompt('How many squares per side for the new grid do you want for the new grid ? (between 16-100)')
-    if(num >= 16 && num <= 100){
-        resetGrid();
-        createGrid(num);
-    }
+    num = `${rangeValue.value}`;
+    resetGrid();
+    createGrid(num);
 }
 
 //Add Color selection here
 
 function paintGrid(){
     switch(color) {
-            case 'grey':
-            this.style.backgroundColor = 'grey';
-            color = 'grey';
-            break;
         case 'eraser':
             this.style.backgroundColor = '';
             break;
@@ -58,23 +52,15 @@ function paintGrid(){
 
 function selectColor(event){
     switch(event.target.dataset.color){
-        case 'grey': {
-            console.log(colorSelector.id);
-            color = 'grey';
-            break;
-        }
-        case 'rainbow': {
+        case 'rainbow':
             color = 'rainbow';
             break; 
-        }
-        case 'userColor': {
+        case 'userColor':
             color = 'userColor';
             break;
-        }  
-        case 'eraser': {
+        case 'eraser': 
             color = 'eraser';
             break;
-        }  
     }
 }
 
@@ -96,6 +82,7 @@ colorSelector.forEach((btn) => {
     btn.addEventListener('click', selectColor);
     })
 
-    
+const rangeValue = document.querySelector('#changeGrid');
+
 
 createGrid(num)
