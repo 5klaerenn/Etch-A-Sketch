@@ -1,23 +1,94 @@
 body {
-    background-color: aquamarine;
+    background-color: rgb(255, 251, 228);
+    font-family: 'Dancing Script', cursive;
 }
 
 #mainContainer{
-    display: flex;
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+    background-color: rgb(179, 15, 15);
+    box-shadow: 7px 7px 5px 0px rgba(121, 0, 0, 0.692) inset;
+    box-shadow: 5px 5px 5px 7px rgba(121, 0, 0, 0.692) inset;
+    padding: 35px 150px 10px 150px;
 }
 
+h1{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    color: goldenrod;
+    text-shadow: -3px -3px 3px rgba(110, 80, 15, 0.932);
+}
+
+/* Nav styling */
+
 #navContainer{
+    height: 50px;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    margin: 15px auto;
+    padding: 25px 0;
+}
+
+#colorSelector{
+    display: flex;
+    align-items: center;
+}
+
+.select{
+    border: solid 1px grey;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+#userColor{
+    background-color: transparent;
+    border: none;
+}
+
+#eraseBtn{
+    background-color: rgba(163, 11, 11, 0.616);
+    width: 10rem;
+    border: none;
+    padding: 7px;
+}
+
+#gridActions{
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.actionBtn{
+    margin: 7px;
+}
+
+
+/* Grid styling*/
+
+#grid{
+    height: 450px;
+    width: 550px;
+    background-color: darkgray;
+    border-radius: 25px;
+    display: flex;
+    box-shadow: 7px 7px 7px 7px rgba(0,0,0,0.35) inset;
 }
 
 #gridContainer{
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     border-right: solid black 1px;
     border-bottom: solid black 1px;
     margin: auto;
     display: grid;
+    background-color: darkgray;
 }
 
 .gridSquare {
@@ -25,8 +96,23 @@ body {
     border-top: solid black 1px;
 }
 
-.hoveredIn {
-    height: 100%;
-    width: 100%;
-    background-color: black;
+#leftcircle, 
+#rightcircle {
+    background-color: antiquewhite;
+    height: 85px;
+    width: 85px;
+    border-radius: 100%;
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    box-shadow: 7px 7px 5px 0px rgba(138, 137, 137, 0.692);
+    box-shadow: 7px 7px 5px 0px rgba(138, 137, 137, 0.692) inset;
+}
+
+#leftcircle{
+    left: -315px;
+}
+
+#rightcircle{
+    right: -315px;
 }
