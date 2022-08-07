@@ -8,25 +8,39 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/41f798dfa0.js" crossorigin="anonymous"></script>
     </head>
     <body>
+
         <div id="mainContainer">
             
+            <h1>Etch-A-Sketch</h1>
+
+            <div id="grid">
+                <div id="gridContainer"></div>
+            </div>
+
+
             <div id="navContainer">
                 <div id="colorSelector">
-                    <h2>Change color ?</h2>
-                    <button class="select" data-color="grey">Grey</button>
-                    <button class="select" data-color="rainbow">Rainbow</button>
-                    <input class="select" id="userColor" data-color="userColor" type="color"></button>
-                    <button class="select" data-color="eraser">Eraser</button>
+<!--                     <h4>Changer de couleur ?</h4>
+ -->                    <button class="select" data-color="rainbow" id="rainbow"><i class="fa-solid fa-rainbow"></i></button>
+                    <input class="select" id="userColor" data-color="userColor" 
+                    type="color"></button>
+                    <button class="select" data-color="eraser" id="eraser"><i class="fa-solid fa-eraser"></i></button>
                 </div>
                 <div id="gridActions">
-                    <button id="changeGrid">Change grid size ?</button>
-                    <button id="eraseBtn">Erase grid</button>
+                    <input type="range" id="changeGrid" name="size"
+                        min="16" max="80"
+                        value="16" step="16">
+                        <label for="size">Taille de grille</label>    
+                    <button id="changeGrid">Taille</button>
+                    <button id="eraseBtn">Effacer la grille</button>
                 </div>    
             </div>
 
-            <div id="gridContainer"></div>
+
+              
 
         </div>
 
