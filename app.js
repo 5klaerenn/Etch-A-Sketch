@@ -10,18 +10,14 @@ function createGrid(num) {
     } 
 
     let gridPixels = gridCont.querySelectorAll('div');
-    let mouseClicked = false;
     gridPixels.forEach((el) => { 
-        el.addEventListener('mousedown', () => {
-
-            el.classList.add('hoveredIn')});
-        });
+        el.addEventListener('mouseover', paintGrid)});
 }
 
 function eraseGrid(){
     let gridPixels = gridCont.querySelectorAll('div');
     gridPixels.forEach((el) => {
-        el.classList.remove('hoveredIn');
+        el.style.backgroundColor = '';
         });
 }
 
@@ -39,12 +35,52 @@ function changeSize(){
 
 //Add Color selection here
 
-function selectColor(){
+function paintGrid(){
+    switch(color) {
+            case 'grey':
+            this.style.backgroundColor = 'grey';
+            color = 'grey';
+            break;
+        case 'eraser':
+            this.style.backgroundColor = '';
+            break;
+        case 'rainbow':
+            this.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            break;
+        case 'userColor':
+            this.style.backgroundColor = `${userColor.value}`;
+            break;
+        default:
+            this.style.backgroundColor = 'black';
+            break;
+    }
+}
 
+function selectColor(event){
+    switch(event.target.dataset.color){
+        case 'grey': {
+            console.log(colorSelector.id);
+            color = 'grey';
+            break;
+        }
+        case 'rainbow': {
+            color = 'rainbow';
+            break; 
+        }
+        case 'userColor': {
+            color = 'userColor';
+            break;
+        }  
+        case 'eraser': {
+            color = 'eraser';
+            break;
+        }  
+    }
 }
 
 //Declarations
 
+let color = 'black';
 let num = 16;
 const gridCont = document.querySelector('#gridContainer');
 
@@ -54,8 +90,12 @@ eraseReset.addEventListener('click', () => eraseGrid());
 const gridChange = document.querySelector('#changeGrid');
 gridChange.addEventListener('click', () => changeSize());
 
-const grey = document.querySelector('#grey');
-const rainbow = document.querySelector('#rainbow');
 const userColor = document.querySelector('#userColor');
+let colorSelector = document.querySelectorAll(".select")
+colorSelector.forEach((btn) => { 
+    btn.addEventListener('click', selectColor);
+    })
+
+    
 
 createGrid(num)
