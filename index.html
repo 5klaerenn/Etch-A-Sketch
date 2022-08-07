@@ -9,6 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
         <script src="https://kit.fontawesome.com/41f798dfa0.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
     </head>
     <body>
 
@@ -20,27 +23,25 @@
                 <div id="gridContainer"></div>
             </div>
 
-
             <div id="navContainer">
                 <div id="colorSelector">
-<!--                     <h4>Changer de couleur ?</h4>
- -->                    <button class="select" data-color="rainbow" id="rainbow"><i class="fa-solid fa-rainbow"></i></button>
                     <input class="select" id="userColor" data-color="userColor" 
                     type="color"></button>
+                    <button class="select" data-color="rainbow" id="rainbow"><i class="fa-solid fa-rainbow"></i></button>
                     <button class="select" data-color="eraser" id="eraser"><i class="fa-solid fa-eraser"></i></button>
+                    <div id="leftcircle"></div>
+                    <div id="rightcircle"></div>        
                 </div>
+
                 <div id="gridActions">
-                    <input type="range" id="changeGrid" name="size"
+                    <input type="range" id="changeGrid" class="actionBtn" name="size"
                         min="16" max="80"
                         value="16" step="16">
-                        <label for="size">Taille de grille</label>    
-                    <button id="changeGrid">Taille</button>
-                    <button id="eraseBtn">Effacer la grille</button>
+                        <label for="size"></label>    
+                    <button id="eraseBtn" class="actionBtn">Tout effacer</button>
                 </div>    
             </div>
 
-
-              
 
         </div>
 
