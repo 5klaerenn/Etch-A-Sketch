@@ -10,8 +10,11 @@ function createGrid(num) {
     } 
 
     let gridPixels = gridCont.querySelectorAll('div');
-    gridPixels.forEach((el) => {
-        el.addEventListener('mouseenter', () => el.classList.add('hoveredIn'));
+    let mouseClicked = false;
+    gridPixels.forEach((el) => { 
+        el.addEventListener('mousedown', () => {
+
+            el.classList.add('hoveredIn')});
         });
 }
 
@@ -27,7 +30,7 @@ function resetGrid(){
 }
 
 function changeSize(){
-    num = prompt('How many squares per side for the new grid do you want for the new grid ?')
+    num = prompt('How many squares per side for the new grid do you want for the new grid ? (between 16-100)')
     if(num >= 16 && num <= 100){
         resetGrid();
         createGrid(num);
@@ -35,6 +38,10 @@ function changeSize(){
 }
 
 //Add Color selection here
+
+function selectColor(){
+
+}
 
 //Declarations
 
@@ -46,5 +53,9 @@ eraseReset.addEventListener('click', () => eraseGrid());
 
 const gridChange = document.querySelector('#changeGrid');
 gridChange.addEventListener('click', () => changeSize());
+
+const grey = document.querySelector('#grey');
+const rainbow = document.querySelector('#rainbow');
+const userColor = document.querySelector('#userColor');
 
 createGrid(num)
