@@ -21,29 +21,29 @@ function eraseGrid(){
         });
 }
 
-function resetGrid(){
-    gridCont.innerHTML = '';
-}
-
 function changeSize(){
     num = `${rangeValue.value}`;
     resetGrid();
     createGrid(num);
 }
 
+function resetGrid(){
+    gridCont.innerHTML = '';
+}
+
 //Add Color selection here
 
 function paintGrid(){
     switch(color) {
-        case 'eraser':
-            this.style.backgroundColor = '';
-            break;
         case 'rainbow':
             this.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
             break;
         case 'userColor':
             this.style.backgroundColor = `${userColor.value}`;
             break;
+        case 'eraser':
+            this.style.backgroundColor = 'darkgray';
+            break;    
         default:
             this.style.backgroundColor = 'black';
             break;
@@ -61,12 +61,15 @@ function selectColor(event){
         case 'eraser': 
             color = 'eraser';
             break;
+        default:
+            color = 'black';
+            break
     }
 }
 
 //Declarations
 
-let color = 'black';
+let color = 'black' 
 let num = 16;
 const gridCont = document.querySelector('#gridContainer');
 
